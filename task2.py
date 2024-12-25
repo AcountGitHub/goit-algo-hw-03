@@ -10,7 +10,7 @@ from random import sample
 def get_numbers_ticket(min, max, quantity):
     result_list = list()
     try:
-        if 1 <= min < max and max <= 1000 and min <= quantity <= max:
+        if min >= 1 and max <= 1000 and 0 <= quantity <= max + 1 - min:
             result_list.extend(sorted(sample(range(min, max + 1), quantity)))
     except TypeError:
         print("Minimum value, maximum value and quantity must be integer numbers")
